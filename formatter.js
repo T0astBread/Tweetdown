@@ -3,7 +3,7 @@ const underscInCodeExp = /([^`]*`[^`]*)_([^`]*`[^`]*)/g //To escape underscores 
 
 let doingChanges = false
 
-const createCodeElement = (content, isBlock) => `<span class='tweetdn-code-wrapper ${isBlock ? "block" : ""}'><span class='tweetdn-placeholder'>// Code</span><code>${content}</code></span>`
+const createCodeElement = (content, isBlock) => `<span class='tweetdwn-code-wrapper ${isBlock ? "block" : ""}'><span class='tweetdwn-placeholder'>// Code</span><code>${content}</code></span>`
 
 const format = () => {
     if(doingChanges) return
