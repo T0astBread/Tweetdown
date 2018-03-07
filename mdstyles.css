@@ -1,0 +1,56 @@
+.tweetdn-code-wrapper
+{
+    background:#53595F;
+    border-radius: .25rem;
+    border: .05rem solid #4D555D;
+    color: #efefef;
+    font-family: 'Consolas', 'Courier New', Courier, monospace !important;
+    font-size: .9em !important;
+    padding: .25em;
+}
+
+.TweetTextSize--jumbo .tweetdn-code-wrapper
+{
+    font-size: .8em !important;
+    padding: .125em .25em;
+}
+
+.tweetdn-code-wrapper.block
+{
+    display: block;
+    margin: .5rem 0;
+    margin-left: .25rem;
+}
+
+.TweetTextSize--jumbo .tweetdn-code-wrapper.block
+{
+    margin: .75rem 0;
+    margin-left: .5rem;
+}
+
+.tweetdn-code-wrapper code
+{
+    display: inline;
+}
+
+.tweetdn-code-wrapper .tweetdn-placeholder
+{
+    display: none;
+}
+
+.DMInboxItem-snippet .tweetdn-code-wrapper
+{
+    display: inline-block;
+    margin: 0;
+    padding: 0 .5em;
+}
+
+.DMInboxItem-snippet .tweetdn-code-wrapper .tweetdn-placeholder
+{
+    display: inline;
+}
+
+.DMInboxItem-snippet .tweetdn-code-wrapper code
+{
+    display: none;
+}
