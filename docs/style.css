@@ -1,0 +1,69 @@
+body
+{
+    padding: 0;
+    margin: 0;
+    background: #e6ecf0;
+    color: #14171a;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body > header
+{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: .5rem 1rem;
+    margin: 0;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+header h1
+{
+    display: inline-block;
+    flex-grow: 1;
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.light
+{
+    font-weight: lighter;
+}
+
+header .icon
+{
+    display: inline;
+    width: 2em;
+}
+
+.icon svg
+{
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon.twitter
+{
+    color: #1DA1F2;
+}
+
+main
+{
+    padding: 0 1rem;
+}
+
+section
+{
+    margin: 1rem 0;
+}
+
+h2
+{
+    font-size: 1.2em;
+}
