@@ -1,7 +1,10 @@
 body
 {
+    min-height: 100vh;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
     background: #e6ecf0;
     color: #14171a;
     font-family: "Segoe UI", Tahoma, sans-serif;
@@ -9,6 +12,7 @@ body
 
 body > header
 {
+    height: 3rem;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -18,13 +22,33 @@ body > header
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
+body > *
+{
+    text-align: center;
+}
+
+header .title-wrapper
+{
+    width: 100%;
+}
+
+.logo
+{
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    margin-right: .75em;
+}
+
 header h1
 {
     display: inline-block;
-    flex-grow: 1;
     width: auto;
+    height: 100%;
     padding: 0;
     margin: 0;
+    line-height: 3rem;
+    vertical-align: top;
 }
 
 .light
@@ -56,6 +80,7 @@ header .icon
 main
 {
     padding: 0 1rem;
+    flex-grow: 1;
 }
 
 section
@@ -66,4 +91,15 @@ section
 h2
 {
     font-size: 1.2em;
+}
+
+ul
+{
+    list-style: none;
+    padding: 0;
+}
+
+footer
+{
+    padding: .5rem 1rem;
 }
