@@ -1,3 +1,24 @@
+const formattableQuerySelectors = {
+    webClient: {
+        tweets: ".tweet-text",
+        directMessages: ".DMInboxItem-snippet",
+        bio: ".ProfileHeaderCard-bio",
+    },
+    mobileWebClient: {
+        tweets: "#react-root [data-testid=tweet] > div > div > div:first-of-type + div",
+        expandedTweets: "#react-root [data-testid=tweetDetail] > div ~ div ~ div:not([data-testid=UserCell])",
+        directMessages: "#react-root [data-testid=messageEntry] > div > div > div > div",
+        // directMessageConversationListItems: "#react-root [data-testid=conversation] > div:first-of-type > div:first-of-type + div > div:first-of-type > div:first-of-type + div > div > span",
+        bioOnProfilePage: "[data-testid=primaryColumn] [dir=auto] + div > [dir=auto] :not(a)",
+        bioInSidebar: "[data-testid=sidebarColumn] [data-testid=UserCell] > div > div > div ~ div"
+    }
+}
+const formattableQuerySelectorString =
+    Object.keys(formattableQuerySelectors).map(clientName => {
+        const client = formattableQuerySelectors[clientName]
+        return Object.keys(client).map(selector => client[selector])
+    }).join(", ")
+
 const astInCodeExp = /([^`]*`[^`]*)\*([^`]*`[^`]*)/g //To escape asterisks in code tags
 const underscInCodeExp = /([^`]*`[^`]*)_([^`]*`[^`]*)/g //To escape underscores in code tags
 
@@ -10,7 +31,7 @@ const format = () => {
     doingChanges = true
     console.log("Formatting Markdown on Twitter...")
 
-    const elements = document.querySelectorAll(".tweet-text, .ProfileHeaderCard-bio, .DMInboxItem-snippet")
+    const elements = document.querySelectorAll(formattableQuerySelectorString)
     for(var i = 0; i < elements.length; i++) {
         const element = elements[i]
         if(element.hasAttribute("tweetdown-formatted")) continue
@@ -51,4 +72,4 @@ const observer = new MutationObserver(() => format())
 setTimeout(() => {
     observer.observe(document, {subtree: true, childList: true, attributes: false})
     format()
-}, 500)
+}, window.location.host === "mobile.twitter.com" ? 1500 : 500)

@@ -20,7 +20,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://twitter.com/*"],
+            "matches": ["https://twitter.com/*", "https://mobile.twitter.com/*"],
             "js": ["formatter.js"],
             "css": ["mdstyles.css"]
         }
