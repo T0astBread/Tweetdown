@@ -6,12 +6,12 @@ const formattableQuerySelectors = {
         bio: ".ProfileHeaderCard-bio",
     },
     mobileWebClient: {
-        tweets: "#react-root [data-testid=tweet] > div > div > div:first-of-type + div",
-        expandedTweets: "#react-root [data-testid=tweetDetail] > div ~ div ~ div:not([data-testid=UserCell])",
-        directMessages: "#react-root [data-testid=messageEntry] > div > div > div > div",
+        tweets: "#react-root [data-testid=tweet]",
+        expandedTweets: "#react-root [data-testid=tweetDetail]",
+        directMessages: "#react-root [data-testid=messageEntry]",
         // directMessageConversationListItems: "#react-root [data-testid=conversation] > div:first-of-type > div:first-of-type + div > div:first-of-type > div:first-of-type + div > div > span",
-        bioOnProfilePage: "[data-testid=primaryColumn] [dir=auto] + div > [dir=auto] :not(a)",
-        bioInSidebar: "[data-testid=sidebarColumn] [data-testid=UserCell] > div > div > div ~ div"
+        bioOnProfilePage: "[data-testid=primaryColumn] [dir=auto] + div > [dir=auto]",
+        bioInSidebar: "[data-testid=sidebarColumn] [data-testid=UserCell]"
     }
 }
 const formattableQuerySelectorString =
