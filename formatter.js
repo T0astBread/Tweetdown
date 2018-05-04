@@ -26,7 +26,7 @@ const underscInCodeExp = /([^`]*`[^`]*)_([^`]*`[^`]*)/g //To escape underscores 
 
 let doingChanges = false
 
-const createCodeElement = (content, isBlock) => `<span class='tweetdwn-code-wrapper ${isBlock ? "block" : ""}'><span class='tweetdwn-placeholder'>// Code</span><code>${content}</code></span>`
+const createCodeElement = (content, isBlock) => `<span class='tweetdwn-code-wrapper ${isBlock ? "tweetdwn-code-block" : "tweetdwn-inline-code"}'><span class='tweetdwn-placeholder'>// Code</span><code>${content}</code></span>`
 
 
 //RECURSIVE DOM PARSING
@@ -51,9 +51,9 @@ const formatLeafElement = element => {
     //Implicit code blocks
     html = html.replace(/`\s*([^`]+)\s*`/g, createCodeElement("$1", true))
     //BOLD
-    html = html.replace(/((?:\*\*)|(?:__))(.+?)\1/g, "<strong>$2</strong>")
+    html = html.replace(/((?:\*\*)|(?:__))(.+?)\1/g, "<strong class='tweetdwn-bold'>$2</strong>")
     //ITALIC
-    html = html.replace(/(\*|_)(.+?)\1/g, "<i>$2</i>")
+    html = html.replace(/(\*|_)(.+?)\1/g, "<i class='tweetdwn-italic'>$2</i>")
 
     //Substitute the escape-placeholders
     html = html.replace(/~~~esc~ast~~~/g, "*")

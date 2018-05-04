@@ -1,17 +1,68 @@
-.tweetdwn-escaped::before
+/* HIDDEN CHARACTERS THAT APPEAR ON HOVER */
+
+.tweetdwn-escaped::before, .tweetdwn-bold::before, .tweetdwn-bold::after, .tweetdwn-italic::before, .tweetdwn-italic::after, .tweetdwn-inline-code::before, .tweetdwn-inline-code::after
 {
-    content: "\\";
     display: inline-block;
     max-width: 0;
     opacity: 0;
+    white-space: nowrap;
     transition: .25s ease;
 }
 
-.tweetdwn-escaped:hover::before
+.tweetdwn-escaped:hover::before, .tweetdwn-bold:hover::before, .tweetdwn-bold:hover::after, .tweetdwn-italic:hover::before, .tweetdwn-italic:hover::after, .tweetdwn-inline-code:hover::before, .tweetdwn-inline-code:hover::after
 {
     max-width: 1rem;
     opacity: .5;
 }
+
+.tweetdwn-escaped::before
+{
+    content: "\\";
+}
+
+.tweetdwn-bold::before, .tweetdwn-bold::after
+{
+    content: "**";
+}
+
+.tweetdwn-bold:hover::before, .tweetdwn-bold:hover::after
+{
+    max-width: 2rem;
+}
+
+.tweetdwn-italic::before, .tweetdwn-italic::after
+{
+    content: "*";
+}
+
+.tweetdwn-inline-code::before, .tweetdwn-inline-code::after
+{
+    content: "`";
+}
+
+.tweetdwn-code-block::before, .tweetdwn-code-block::after
+{
+    content: "```";
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    transition: .25s ease;
+}
+
+.tweetdwn-code-block::before
+{
+    content: "```" attr(tweetdwn-lang);
+}
+
+.tweetdwn-code-block:hover::before, .tweetdwn-code-block:hover::after
+{
+    max-height: 2rem;
+    opacity: .5;
+}
+
+
+
+/* CODE TAGS */
 
 .tweetdwn-code-wrapper
 {
@@ -30,14 +81,14 @@
     padding: .125em .25em;
 }
 
-.tweetdwn-code-wrapper.block
+.tweetdwn-code-wrapper.tweetdwn-code-block
 {
     display: block;
     margin: .5rem 0;
     margin-left: .25rem;
 }
 
-.TweetTextSize--jumbo .tweetdwn-code-wrapper.block
+.TweetTextSize--jumbo .tweetdwn-code-wrapper.tweetdwn-code-block
 {
     margin: .75rem 0;
     margin-left: .5rem;
