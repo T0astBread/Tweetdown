@@ -46,7 +46,7 @@
     display: block;
     max-height: 0;
     opacity: 0;
-    transition: .25s ease;
+    transition: .4s ease;
 }
 
 .tweetdwn-code-block::before
