@@ -1,3 +1,18 @@
+.tweetdwn-escaped::before
+{
+    content: "\\";
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    transition: .25s ease;
+}
+
+.tweetdwn-escaped:hover::before
+{
+    max-width: 1rem;
+    opacity: .5;
+}
+
 .tweetdwn-code-wrapper
 {
     background:#53595F;

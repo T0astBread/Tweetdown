@@ -33,6 +33,9 @@ const createCodeElement = (content, isBlock) => `<span class='tweetdwn-code-wrap
 const formatLeafElement = element => {
     let html = element.innerHTML
 
+    //Resolve escaped dots (to prevent Twitter from turning everything with a dot into a link)
+    html = html.replace(/\\\./g, "<span class='tweetdwn-escaped' title='Escaped dot'>.</span>")
+
     //Escaping special characters in code tags
     while(astInCodeExp.test(html)) html = html.replace(astInCodeExp, "$1~~~esc~ast~~~$2")
     while(underscInCodeExp.test(html)) html = html.replace(underscInCodeExp, "$1~~~esc~und~~~$2")
