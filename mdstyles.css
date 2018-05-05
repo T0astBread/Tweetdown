@@ -60,6 +60,22 @@
     opacity: .5;
 }
 
+.DMInboxItem-snippet .tweetdwn-code-block::before, .DMInboxItem-snippet .tweetdwn-code-block::after, .DMInboxItem-snippet .tweetdwn-inline-code::before, .DMInboxItem-snippet .tweetdwn-inline-code::after
+{
+    display: none;
+}
+
+
+
+/* BOLD, ITALIC TAGS */
+
+.DMInboxItem-snippet .tweetdwn-bold, [data-testid=messageEntry] .tweetdwn-bold, .DMInboxItem-snippet .tweetdwn-italic, [data-testid=messageEntry] .tweetdwn-italic
+{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
 
 
 /* CODE TAGS */
@@ -73,6 +89,7 @@
     font-family: 'Consolas', 'Courier New', Courier, monospace !important;
     font-size: .9em !important;
     padding: .25em;
+    overflow: hidden;
 }
 
 .TweetTextSize--jumbo .tweetdwn-code-wrapper
@@ -94,6 +111,12 @@
     margin-left: .5rem;
 }
 
+.tweetdwn-inline-code
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .tweetdwn-code-wrapper code
 {
     display: inline;
@@ -109,6 +132,7 @@
     display: inline-block;
     margin: 0;
     padding: 0 .5em;
+    vertical-align: top;
 }
 
 .DMInboxItem-snippet .tweetdwn-code-wrapper .tweetdwn-placeholder
