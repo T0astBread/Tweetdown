@@ -1,113 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="mdstyles.css">
-    <link rel="stylesheet" href="popup.css">
-    <title>Tweetdown</title>
-</head>
-<body>
-    <header>
-        <h1>Tweetdown<span class="light"> / Usage</span></h1>
-        <a class="icon twitter" href="http://twitter.com/t0astbread" target="_blank" aria-label="Follow me on Twitter" title="Follow me on Twitter">
-            <svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-twitter fa-w-16 fa-2x"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" class=""></path></svg>
-        </a>
-    </header>
-    <main>
-        <section id="introduction">
-            <p>
-                Tweetdown lets you use basic Markdown features on Twitter.
-            </p>
-            <p>
-                Markdown is a neat little markup language to add style and meaning to your text.
-                To use these features, surround a word (or any string of characters) with
-                <strong>Markdown tags</strong>.
-            </p>
-        </section>
-        <section id="supported-tags">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="mdstyles.css">
+        <link rel="stylesheet" href="popup.css">
+        <title>Tweetdown</title>
+    </head>
+    <body>
+        <header>
+            <h1>Tweetdown<span class="light"> / Usage</span></h1>
+            <a class="icon twitter" href="http://twitter.com/t0astbread" target="_blank" aria-label="Follow me on Twitter" title="Follow me on Twitter">
+                <svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-twitter fa-w-16 fa-2x"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" class=""></path></svg>
+            </a>
+        </header>
+        <main>
+            <section id="introduction">
+                <p>
+                    Tweetdown lets you use basic Markdown features on Twitter.
+                </p>
+                <p>
+                    Markdown is a neat little markup language to add style and meaning to your text.
+                    To use these features, surround a word (or any string of characters) with
+                    <strong>Markdown tags</strong>.
+                </p>
+            </section>
+            <section id="supported-tags">
                 <h2>Supported Markdown tags</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th class="col-1">Preview</th>
-                        <th class="col-2">Raw</th>
-                        <th class="col-3">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id="bold">
-                        <td>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col-1">Preview</th>
+                            <th class="col-2">Raw</th>
+                            <th class="col-3">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="bold">
+                            <td>
                                 <strong class="tweetdwn-bold">Bold</strong>
-                        </td>
-                        <td>**Bold** or __Bold__</td>
-                        <td>Renders text in bold characters (often used to highlight it)</td>
-                    </tr>
-                    <tr id="italic">
-                        <td>
+                            </td>
+                            <td>**Bold** or __Bold__</td>
+                            <td>Renders text in bold characters (often used to highlight it)</td>
+                        </tr>
+                        <tr id="italic">
+                            <td>
                                 <i class="tweetdwn-italic">Italic</i>
-                        </td>
-                        <td>*Italic* or _Italic_</td>
-                        <td>Renders text in italic characters</td>
-                    </tr>
-                    <tr id="bold-and-italic">
-                        <td>
+                            </td>
+                            <td>*Italic* or _Italic_</td>
+                            <td>Renders text in italic characters</td>
+                        </tr>
+                        <tr id="bold-and-italic">
+                            <td>
                                 <i class="tweetdwn-italic"><strong class="tweetdwn-bold">Italic and Bold</strong></i>
-                        </td>
-                        <td>***Italic and Bold*** or ___Italic and Bold___</td>
-                        <td>Renders text in italic and bold characters</td>
-                    </tr>
-                    <tr id="inline-code">
-                        <td>
+                            </td>
+                            <td>***Italic and Bold*** or ___Italic and Bold___</td>
+                            <td>Renders text in italic and bold characters</td>
+                        </tr>
+                        <tr id="inline-code">
+                            <td>
                                 <span class="tweetdwn-code-wrapper tweetdwn-inline-code">
-                                <span class="tweetdwn-placeholder">// Code</span>
-                                <code>Code (inline)</code>
-                            </span>
-                        </td>
-                        <td>`Code (inline)`</td>
-                        <td>
-                            <p>
-                                Represents text in a way in which computer code is often represented.
-                            </p>
-                            <p>
-                                Note that this is the inline version of the code tag, so it should only be used
+                                    <span class="tweetdwn-placeholder">// Code</span>
+                                    <code>Code (inline)</code>
+                                </span>
+                            </td>
+                            <td>`Code (inline)`</td>
+                            <td>
+                                <p>
+                                    Represents text in a way in which computer code is often represented.
+                                </p>
+                                <p>
+                                    Note that this is the inline version of the code tag, so it should only be used
                                     on single line code snippets (although multiline snippets will be recognized as code blocks).
-                                If you want (proper) multiline code use a <a href="#code-block">code block</a>.
-                            </p>
-                        </td>
-                    </tr>
-                    <tr id="code-block">
-                        <td>
+                                    If you want (proper) multiline code use a <a href="#code-block">code block</a>.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr id="code-block">
+                            <td>
                                 <span class="tweetdwn-code-wrapper tweetdwn-code-block">
-                                <span class="tweetdwn-placeholder">// Code</span>
-                                <code>
+                                    <span class="tweetdwn-placeholder">// Code</span>
+                                    <code>
                                         Code<br>
                                         Block
-                                </code>
-                            </span>
-                        </td>
-                        <td>
-                            <p>
-                                ```<br>
-                                Code<br>
+                                    </code>
+                                </span>
+                            </td>
+                            <td>
+                                <p>
+                                    ```<br>
+                                    Code<br>
                                     Block<br>
-                                ```
-                            </p>
-                        </td>
-                        <td>
-                            <p>
-                                Represents text in a way in which computer code is often represented.
-                            </p>
-                            <p>
-                                Note that this is the block version of the code tag, which is used if you want to
+                                    ```
+                                </p>
+                            </td>
+                            <td>
+                                <p>
+                                    Represents text in a way in which computer code is often represented.
+                                </p>
+                                <p>
+                                    Note that this is the block version of the code tag, which is used if you want to
                                     have it on a seperate line or if it's multiline code. If you want code mixed with
-                                other text in one line use <a href="#inline-code">inline code</a>.
-                            </p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                                    other text in one line use <a href="#inline-code">inline code</a>.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="escaping-dots">
+                <h2>Escaping dots</h2>
+                <p>
+                    You can escape dots to prevent Twitter from recognizing the affected word as a link. This is
+                    particularly useful in code tags since code tags with links in them won't be recognized and
+                    formatted by Tweetdown.
+                </p>
+                <p>
+                    Escaping dots is done by putting a backslash (\) in front of the dot. For example:<br>
+                    `hello\.world()` will render as 
+                    <span class="tweetdwn-code-wrapper tweetdwn-inline-code">
+                        <span class="tweetdwn-placeholder">// Code</span>
+                        <code>hello<span class="tweetdwn-escaped" title="Escaped dot">.</span>world()</code>
+                    </span>
+                </p>
             </section>
         </main>
         <footer>
@@ -116,5 +132,5 @@
                 This is not an official Twitter product.
             </small>
         </footer>
-</body>
+    </body>
 </html>
