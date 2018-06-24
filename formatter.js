@@ -1,4 +1,10 @@
 //#region QUERY SELECTORS
+const buildQuerySelectorString = selectors =>
+Object.keys(selectors).map(clientName => {
+    const client = selectors[clientName]
+    return Object.keys(client).map(selector => client[selector])
+}).join(", ")
+
 const formattableQuerySelectors = {
     webClient: {
         tweets: ".tweet-text",
@@ -11,14 +17,21 @@ const formattableQuerySelectors = {
         directMessages: "#react-root [data-testid=messageEntry]",
         // directMessageConversationListItems: "#react-root [data-testid=conversation] > div:first-of-type > div:first-of-type + div > div:first-of-type > div:first-of-type + div > div > span",
         bioOnProfilePage: "[data-testid=primaryColumn] [dir=auto] + div > [dir=auto]",
-        bioInSidebar: "[data-testid=sidebarColumn] [data-testid=UserCell]"
+        bioInSidebar: "[data-testid=sidebarColumn] [data-testid=UserCell] [dir=auto]"
     }
 }
-const formattableQuerySelectorString =
-    Object.keys(formattableQuerySelectors).map(clientName => {
-        const client = formattableQuerySelectors[clientName]
-        return Object.keys(client).map(selector => client[selector])
-    }).join(", ")
+const formattableQuerySelectorString = buildQuerySelectorString(formattableQuerySelectors)
+
+const excludedQuerySelectors = {
+    webClient: {
+        link: "a"
+    },
+    mobileWebClient: {
+        userCell: "[data-testid=UserCell]",
+        link: "a[role=link]"
+    }
+}
+const excludedQuerySelectorsString = buildQuerySelectorString(excludedQuerySelectors)
 //#endregion
 
 
@@ -71,6 +84,10 @@ const formatBranchElement = element => {
 }
 
 const formatElement = element => {
+    if(element.matches(excludedQuerySelectorsString)) {
+        console.log(`Excluded: ${element.innerHTML}`)
+        return
+    }
     if(element.children.length > 0) formatBranchElement(element)
     else formatLeafElement(element)
 }
