@@ -1,4 +1,4 @@
-//QUERY SELECTORS
+//#region QUERY SELECTORS
 const formattableQuerySelectors = {
     webClient: {
         tweets: ".tweet-text",
@@ -19,6 +19,7 @@ const formattableQuerySelectorString =
         const client = formattableQuerySelectors[clientName]
         return Object.keys(client).map(selector => client[selector])
     }).join(", ")
+//#endregion
 
 
 const astInCodeExp = /([^`]*`[^`]*)\*([^`]*`[^`]*)/g //To escape asterisks in code tags
@@ -29,7 +30,7 @@ let doingChanges = false
 const createCodeElement = (content, isBlock) => `<span class='tweetdwn-code-wrapper ${isBlock ? "tweetdwn-code-block" : "tweetdwn-inline-code"}'><span class='tweetdwn-placeholder'>// Code</span><code>${content}</code></span>`
 
 
-//RECURSIVE DOM PARSING
+//#region RECURSIVE DOM PARSING
 const formatLeafElement = element => {
     let html = element.innerHTML
 
@@ -73,6 +74,7 @@ const formatElement = element => {
     if(element.children.length > 0) formatBranchElement(element)
     else formatLeafElement(element)
 }
+//#endregion
 
 
 const format = () => {
